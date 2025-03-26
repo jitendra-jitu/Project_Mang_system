@@ -1,0 +1,418 @@
+{
+	"info": {
+		"_postman_id": "b25d2120-9da2-49ca-95eb-e599e366ff3d",
+		"name": "Project_mang_system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36504589"
+	},
+	"item": [
+		{
+			"name": "Register new user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Funny\",\r\n  \"email\": \"Funny@example.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/v1/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"Funny@example.com\",\r\n  \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/v1/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "GET all users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"User999\",\r\n  \"email\": \"user999@example.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/v1/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Create new user-admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"User999\",\r\n  \"email\": \"user999@example.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/v1/users"
+			},
+			"response": []
+		},
+		{
+			"name": "GET -single user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/users/67e372c191ef1ee3add44c26"
+			},
+			"response": []
+		},
+		{
+			"name": "Update username- ADMIN",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"MASTERO 2.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/v1/users/67e372c191ef1ee3add44c26"
+			},
+			"response": []
+		},
+		{
+			"name": "delete user -ADMIN",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/users/<user_id>"
+			},
+			"response": []
+		},
+		{
+			"name": "GET all projects",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/projects"
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE project- ADMIN",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Project 4\",\r\n  \"description\": \"Project description here\",\r\n  \"assignedUsers\": [\"67e423318ef200a9ac229e1e\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/v1/projects"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Projects by User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/users/67e423318ef200a9ac229e1e/projects"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Project-ADMINN",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/projects/67e425148ef200a9ac229e32"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Updated Project 3.0... \",\r\n  \"description\": \"Updated Project description here\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/v1/projects/67e44479d598cf35fd0b2644"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task-ADMIN",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Testing task\",\r\n  \"description\": \"Task description here..\",\r\n  \"assignedUser\": \"67e423318ef200a9ac229e1e\",\r\n  \"startDate\": \"2023-01-01\",\r\n  \"endDate\": \"2023-01-10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/v1/projects/67e44479d598cf35fd0b2644/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tasks by Project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/projects/67e44479d598cf35fd0b2644/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tasks by User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/users/67e423318ef200a9ac229e1e/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/tasks/67e43116d5217616372182f3"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Updated Task 4....\",\r\n  \"status\": \"in-progress\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/v1/tasks/67e43116d5217616372182f3"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"completed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/v1/tasks/67e38ec9cba8e3831acd6047/status"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/tasks/67e426808ef200a9ac229e4c"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzNzIxOTkxZWYxZWUzYWRkNDRjMjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI5NTk3NjAsImV4cCI6MTc0NTU1MTc2MH0.KS3gRWo_YA9dQvfFQagDSIkQ7sWK_8IoxotuC-jQcc4"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/projects/67e44783b082ac8fe5382f04"
+			},
+			"response": []
+		}
+	]
+}

@@ -2,38 +2,22 @@ const express = require('express');
 const {
   getTasks,
   getTask,
-  addTask,
   updateTask,
   deleteTask,
-  updateTaskStatus,
-  getProjectTasks,
-  getUserTasks
+  updateTaskStatus
 } = require('../controllers/taskController');
 
-const router = express.Router({ mergeParams: true });
+const router = express.Router();
 const { protect } = require('../middleware/auth');
 
+// Protect all routes
 router.use(protect);
 
-// Regular task routes
-router.route('/')
-  .get(getTasks);
-
-router.route('/:id')
-  .get(getTask)
-  .put(updateTask)
-  .delete(deleteTask);
-
-router.route('/:id/status')
-  .put(updateTaskStatus);
-
-// Project-specific task routes
-router.route('/projects/:projectId/tasks')
-  .get(getProjectTasks)
-  .post(addTask);
-
-// User-specific task routes
-router.route('/users/:userId/tasks')
-  .get(getUserTasks);
+// General task routes
+router.get('/', getTasks);
+router.get('/:id', getTask);
+router.put('/:id', updateTask);
+router.delete('/:id', deleteTask);
+router.put('/:id/status', updateTaskStatus);
 
 module.exports = router;

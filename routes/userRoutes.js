@@ -7,6 +7,7 @@ const {
   deleteUser,
   getUserProjects
 } = require('../controllers/userController');
+const { getUserTasks } = require('../controllers/taskController');
 
 const router = express.Router();
 const { protect, authorize } = require('../middleware/auth');
@@ -25,8 +26,12 @@ router.route('/:id')
   .put(updateUser)
   .delete(deleteUser);
 
-// Add this route for getting user's projects
+// User projects route
 router.route('/:userId/projects')
   .get(getUserProjects);
+
+// User tasks route
+router.route('/:userId/tasks')
+  .get(getUserTasks);
 
 module.exports = router;
